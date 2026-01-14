@@ -16,7 +16,7 @@ export default defineConfig([
     rules: {
       "no-unused-vars": "warn",
       "no-undef": "warn",
-      quotes: ["error", "double", { allowTemplateLiterals: true }],
+      quotes: ["warn", "double", { allowTemplateLiterals: true }],
       "no-console": "warn",
     },
   },
