@@ -15,15 +15,15 @@
   "author": "Shane Thompson",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.25.1",
-    "@types/node": "^22.13.9",
-    "eslint": "^9.25.1",
-    "eslint-config-prettier": "^10.1.1",
-    "globals": "^16.0.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.2",
-    "vite": "^6.3.3",
-    "vitest": "^3.1.2"
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^25.0.8",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.0.0",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.17"
   },
   "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3"
 }
