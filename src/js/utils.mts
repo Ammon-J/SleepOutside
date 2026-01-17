@@ -5,13 +5,16 @@ export function qs(selector: string, parent = document) {
 // or a more concise version if you are into that sort of thing:
 // export const qs = (selector, parent = document) => parent.querySelector(selector);
 
-// retrieve data from localstorage
-export function getLocalStorage(key: string) {
-  const data = localStorage.getItem(key) || "";
-  return JSON.parse(data);
+/** retrieve data from localstorage */
+export function getLocalStorage<T>(key:string) {
+  const data = localStorage.getItem(key)
+  if (data) {
+    return JSON.parse(data) as T;
+  }
 }
-// save data to local storage
-export function setLocalStorage(key: string, data: any) {
+
+/** save data to local storage */
+export function setLocalStorage(key:string, data:any) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 // set a listener for both touchend and click
