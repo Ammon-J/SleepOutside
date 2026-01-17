@@ -1,5 +1,5 @@
-import type {Product} from "./types.mts"
-function convertToJson(res:Response) {
+import type { Product } from "./types.mts";
+function convertToJson(res: Response) {
   if (res.ok) {
     return res.json();
   } else {
@@ -13,7 +13,7 @@ export function getData(category = "tents") {
     .then((data) => data);
 }
 
-export async function findProductById(id:string) {
+export async function findProductById(id: string) {
   const products = await getData();
-  return products.find((item:Product) => item.id === id);
+  return products.find((item: Product) => item.id === id);
 }
