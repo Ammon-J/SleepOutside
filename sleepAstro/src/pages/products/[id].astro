@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+// map though all products to create a page for each one
+export async function getStaticPaths() {
+  const products = await getCollection("products");
+
+  return products.map((product) => ({
+    params: { id: product.id },
+    props: product
+  }));
+}
+type Props = CollectionEntry<"products">;
+
+// get the product data from the props to use in the template below. The actual data is in product.data
+const product = Astro.props;
+const title = product.data.name;
+---
+<Layout>
+  <script src="../../js/product.ts"></script>
+
+     <section class="product-detail">
+        <h3>Marmot</h3>
+
+        <h2 class="divider">Ajax Tent - 3-Person, 3-Season</h2>
+
+        <img
+          class="divider"
+          src=`../../../public/images/${product.data.imageSrc}`
+          alt="Marmot Ajax tent"
+        />
+
+        <p class="product-card__price">{product.data.price}</p>
+
+        <p class="product__color">{product.data.color}</p>
+
+        <p class="product__description">{product.data.description}
+        </p>
+
+        <div class="product-detail__add">
+          <button id="addToCart" data-id="880RR">Add to Cart</button>
+        </div>
+      </section>
+  
+</Layout>
