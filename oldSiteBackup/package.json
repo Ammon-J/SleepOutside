@@ -8,27 +8,14 @@
     "start": "vite",
     "build": "tsc && vite build --emptyOutDir",
     "preview": "vite preview",
-    "lint": "eslint src",
-    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "test": "vitest"
   },
   "author": "Shane Thompson",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
-    "@types/node": "^25.0.9",
-    "eslint": "^9.39.2",
-    "eslint-config-prettier": "^10.1.8",
     "globals": "^17.0.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "prettier": "^3.8.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vitest": "^4.0.17"
-  },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.53.0",
-    "@typescript-eslint/parser": "^8.53.0"
   }
 }

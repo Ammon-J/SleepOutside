@@ -1,0 +1,43 @@
+{
+  "name": "sleepoutside",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ammon-J/SleepOutside.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^25.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
+  },
+  "bugs": {
+    "url": "https://github.com/Ammon-J/SleepOutside/issues"
+  },
+  "homepage": "https://github.com/Ammon-J/SleepOutside#readme",
+  "workspaces": [
+    "oldSiteBackup",
+    "sleepAstro"
+  ],
+  "dependencies": {
+    "astro": "^5.16.15"
+  }
+}

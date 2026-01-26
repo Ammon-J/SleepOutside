@@ -3,5 +3,7 @@ module.exports = {
     `prettier --write ${stagedFiles.join(" ")}`,
     `eslint --max-warnings=0 ${stagedFiles.join(" ")}`,
   ],
-  "*.astro": (stagedFiles) => [`prettier --write ${stagedFiles.join(" ")}`],
+  "*.{astro,md}": (stagedFiles) => [
+    `prettier --write ${stagedFiles.join(" ")}`,
+  ],
 };

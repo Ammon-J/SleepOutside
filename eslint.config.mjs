@@ -6,7 +6,7 @@ import tsParser from "@typescript-eslint/parser";
 
 export default defineConfig([
   {
-    ignores: ["node_modules/**", "dist/**"],
+    ignores: ["**/node_modules/**", "**/dist/**", "**/.astro/**"],
   },
   {
     files: ["**/*.{js,mjs,cjs}"],
