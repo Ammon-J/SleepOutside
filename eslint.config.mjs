@@ -3,6 +3,7 @@ import globals from "globals";
 import { defineConfig } from "eslint/config";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
+import astro from "eslint-plugin-astro";
 
 export default defineConfig([
   {
@@ -13,6 +14,7 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
   },
+  ...astro.configs.recommended,
   {
     files: ["**/*.{js,mjs,cjs}"],
     languageOptions: { globals: globals.browser },
