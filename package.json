@@ -39,6 +39,7 @@
     "sleepAstro"
   ],
   "dependencies": {
-    "astro": "^5.16.15"
+    "astro": "^5.16.15",
+    "zod": "^4.3.6"
   }
 }
