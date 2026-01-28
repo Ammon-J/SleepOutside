@@ -1,7 +1,6 @@
 import { z } from "zod";
 
-// --------------- Collection: User ---------------
-
+// --------------- Collection: Address ---------------
 const AddressSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -13,6 +12,7 @@ const AddressSchema = z.object({
   country: z.string(),
 });
 
+// --------------- Collection: User ---------------
 export type User = z.infer<typeof UserSchema>;
 export const UserSchema = z.object({
   id: z.string(),
@@ -83,6 +83,7 @@ export const ProductSchema = z.object({
   ratingCount: z.number(),
 });
 
+// --------------- Collection: Category ---------------
 export const CategorySchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -91,6 +92,7 @@ export const CategorySchema = z.object({
 });
 export type Category = z.infer<typeof CategorySchema>;
 
+// --------------- Collection: Brand ---------------
 export type Brand = z.infer<typeof BrandSchema>;
 export const BrandSchema = z.object({
   id: z.string(),
@@ -105,7 +107,7 @@ export const AlertSchema = z.object({
   title: z.string(),
   type: z.enum(["warning", "info", "promotion"]),
   scope: z.enum(["brand", "category", "product"]),
-  productIds: z.array(z.string()),
+  targetIds: z.array(z.string()),
   status: z.enum(["active", "inactive"]),
   startsAt: z.date(),
   endsAt: z.date().nullable(),
@@ -120,7 +122,9 @@ export const ReviewSchema = z.object({
   rating: z.number().min(1).max(5),
   title: z.string(),
   comment: z.string(),
-  isVerifiedPurchase: z.boolean(),
   createdAt: z.date(),
   modifiedAt: z.date(),
+
+  // Aggregate
+  isVerifiedPurchase: z.boolean(),
 });
