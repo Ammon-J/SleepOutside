@@ -4,15 +4,15 @@ import type { Product } from "./types.mjs";
 function renderCartContents() {
   const cartItems = getLocalStorage<Product[]>("so-cart") ?? [];
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  const listEl = document.querySelector(".product-list")
-  if(listEl)  listEl.innerHTML = htmlItems.join("");
+  const listEl = document.querySelector(".product-list");
+  if (listEl) listEl.innerHTML = htmlItems.join("");
 }
 
 function cartItemTemplate(item: Product) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.image}"
+      src="${item.images.primaryExtraLarge}"
       alt="${item.name}"
     />
   </a>

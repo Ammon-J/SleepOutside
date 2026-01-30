@@ -1,4 +1,5 @@
 ---
+import type { Product } from "../../js/types.mts";
 import Layout from "../../layouts/Layout.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 
@@ -8,39 +9,44 @@ export async function getStaticPaths() {
 
   return products.map((product) => ({
     params: { id: product.id },
-    props: product
+    props: product,
   }));
 }
 type Props = CollectionEntry<"products">;
 
 // get the product data from the props to use in the template below. The actual data is in product.data
-const product = Astro.props;
+
+// TODO - this needs to statically generate from all products fetched from mongo DB
+const product: { data: Product } = Astro.props;
+// eslint-disable-next-line no-unused-vars
 const title = product.data.name;
 ---
+
 <Layout>
   <script src="../../js/product.ts"></script>
 
-     <section class="product-detail">
-        <h3>Marmot</h3>
+  <section class="product-detail">
+    <h3>Marmot</h3>
 
-        <h2 class="divider">Ajax Tent - 3-Person, 3-Season</h2>
+    <h2 class="divider">Ajax Tent - 3-Person, 3-Season</h2>
 
-        <img
-          class="divider"
-          src=`../../../public/images/${product.data.imageSrc}`
-          alt="Marmot Ajax tent"
-        />
+    <img
+      class="divider"
+      src=`../../../public/images/${product.data.image}`
+      alt="Marmot Ajax tent"
+    />
 
-        <p class="product-card__price">{product.data.price}</p>
+    <p class="product-card__price">${product.data.listPrice}</p>
 
-        <p class="product__color">{product.data.color}</p>
+    <!-- TODO - map over colors -->
+    <p class="product__color">
+      {JSON.stringify(product.data.colors)}
 
-        <p class="product__description">{product.data.description}
-        </p>
+      <p class="product__description">{product.data.descriptionHtmlSimple}</p>
 
-        <div class="product-detail__add">
-          <button id="addToCart" data-id="880RR">Add to Cart</button>
-        </div>
-      </section>
-  
-</Layout>
+      <div class="product-detail__add">
+        <button id="addToCart" data-id="880RR">Add to Cart</button>
+      </div>
+    </p>
+  </section></Layout
+>
