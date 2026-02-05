@@ -21,6 +21,7 @@ export const UserSchema = z.object({
   password: z.string(),
   addressIds: z.array(z.string()), // Option to save address only at checkout
   joinDate: z.date(),
+  role: z.enum(["customer", "user"]),
 });
 
 // --------------- Collection: Order ---------------
